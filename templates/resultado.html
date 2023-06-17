@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teste do Modelo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+    <style>
+        body {
+            background-color: #F3F3F3;
+        }
+
+        .card {
+            background-color: #93B874;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            text-align: center;
+        }
+
+        .btn-classificar {
+            margin-top: 20px;
+            float: right;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-classificar:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<!--    <div class="page-header">-->
+<!--        <h1>Resultado</h1>-->
+<!--    </div>-->
+
+
+    <div class="card" id="resultado-card">
+        <div class="card-body">
+            <h3 class="card-title">Resultado:</h3>
+            <p>{{ resultado }}</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

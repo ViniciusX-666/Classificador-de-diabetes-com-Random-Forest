@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teste do Modelo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+    <style>
+        body {
+            background-color: #F3F3F3;
+        }
+
+        .card {
+            background-color: #93B874;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-title {
+            text-align: center;
+        }
+
+        .btn-classificar {
+            margin-top: 20px;
+            float: right;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .btn-classificar:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header">
+            <h1>{{ titulo }}</h1>
+        </div>
+
+        <div class="card">
+            <div class="card-body">
+                <form action="{{ url_for('classifica') }}" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="hypertension">Você é hipertenso?</label>
+                                <select id="hypertension" name="hypertension" class="form-control">
+                                    <option value="">Selecione</option>
+                                    <option value="1">Sim</option>
+                                    <option value="0">Não</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="heart_disease">Possui alguma doença cardíaca?</label>
+                                <select id="heart_disease" name="heart_disease" class="form-control">
+                                    <option value="">Selecione</option>
+                                    <option value="1">Sim</option>
+                                    <option value="0">Não</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="age">Qual sua idade?</label>
+                                <input type="text" id="age" name="age" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Qual o seu sexo?</label>
+                                <select id="gender" name="gender" class="form-control">
+                                    <option value="">Selecione</option>
+                                    <option value="1">Masculino</option>
+                                    <option value="0">Feminino</option>
+                                    <option value="2">Outro</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="smoking_history">Qual o seu histórico com cigarros?</label>
+                                <select id="smoking_history" name="smoking_history" class="form-control">
+                                    <option value="">Selecione</option>
+                                    <option value="0">Não fumo</option>
+                                    <option value="1">Não fumo mas já fumei</option>
+                                    <option value="2">Fumo às vezes</option>
+                                    <option value="3">Fumo todos os dias</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="bmi">Qual o seu índice de massa corporal (IMC)?</label>
+                                <input type="text" id="bmi" name="bmi" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="HbA1c_level">Qual o seu nível de HbA1c (Hemoglobina A1c)?</label>
+                                <input type="text" id="HbA1c_level" name="HbA1c_level" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="blood_glucose_level">Qual o seu nível de açúcar no sangue?</label>
+                                <input type="text" id="blood_glucose_level" name="blood_glucose_level" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-classificar">Testar</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+<!--<script src="{{ url_for('static', filename='scripts/novo.js') }}"></script>-->
+
+</html>
